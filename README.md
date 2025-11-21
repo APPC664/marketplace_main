@@ -74,7 +74,7 @@ class SignupForm(UserCreationForm):
 from django.shortcuts import render
 from .models import Item, Category
 from django.shortcuts import get_object_or_404
-
+from .forms import SignupForm
 
 
 
