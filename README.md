@@ -298,7 +298,7 @@ urlpatterns = [
 * Explicacion de archivos................................................8
 * Código de los archivos................................................13
 * Ejecucion del proyecto................................................23
-## Archivos Actualizados.................................................25
+* Archivos Actualizados.................................................25
 * Forms.py.....................................................................25
 * Views.py actualizado .........................................................31
 * Explicacion de el decorados de loqgin_required.........34
@@ -538,15 +538,31 @@ grandes en menos tiempo.*
 *de datos.*
 *Se utiliza de la siguiente forma*
 **(venv) C:\Users\Usuario\NombreDeLaCarpeta> python manage.py migration**
+### git status 
+*para visualizar si están guardados o no*
 
+### git add . 
+*para guardar los cambios y que se pongan en verde.*
 
-*
+### git commit -m "acá es un mensaje"
+*Sirve para guardar y decir un mensaje*
+
+### git config user.email (tu correo de github)
+*Sirve para iniciar sesión con tu cuenta de github*
+
+### git branch -M main
+*Sirve para renombrar la rama a main*
+
+### git remote add origin con un enlace (https://gitub.com/tuUsuario/marketplace_main.git
+*srive para conectarse a un repositorio remoto*
+
+### git push -u origin main
+*Sirve para guardar los cambios en el repositorio remoto*
 
 ### 6
 
 ## 4. Diagrama
-![alt text](media/item_images/konsola-xbox-series-X.webp)
-
+![alt text](imagenes/Diagrama.png)
 ## 5. Explicacion de los siguientes archivos 
 
 ### settigs.py 
@@ -1023,8 +1039,14 @@ def detail(request, pk):
 ```
 ## Agrega la ejecucion de lo que va del proyecto
 ### Pagina principal
+![alt text](imagenes/1.png)
 ### Pagina contacto
+![alt text](imagenes/2.png)
 ### Pagina detail
+![alt text](imagenes/3.png)
+
+
+
 ### 24
 
 
@@ -1034,12 +1056,15 @@ def detail(request, pk):
 
 ### LoginForm
 *Este nos sirvió para crear un formulario donde el usuario llena sus datos para iniciar secion a la página web con una cuenta ya guardada en la base de datos. Este está basado en el formulario de login que trae Django.*
+![alt text](imagenes/4.png)
 
 ### Signup 
 *Esto nos sirvió para que el usuario pueda crear una cuenta nueva en la página web, para que despues inicie sesion a la página web. El cual para iniciar sesion se necesita una contraseña, usuario y un correo para que se cree una nueva cuenta.*¨
+![alt text](imagenes/5.png)
 
 ### NewItemForm
 *Este nos sirvió para que el usuario pueda editar y crear objetos del modelo Item en la página web.*
+![alt text](imagenes/6.png)
 
 **El codigo**
 ```Python
@@ -1170,6 +1195,11 @@ class NewItemForm(forms.ModelForm):
 **register():**
 *Nueva vista para registrar usuarios con SignupForm.*
 *Si el formulario es válido, guardamos el usuario y lo mandamos al login.*
+![alt text](imagenes/7.png)
+![alt text](imagenes/8.png)
+
+
+
 
 **Su codigo:**
 ```Python
@@ -1276,7 +1306,7 @@ def add_item(request):
 *Sí: entonces Django permite ejecutar la vista normalmente.*
 *No: automáticamente lo redirecciona a la página de login.*
 *Como no está iniciado sesion, no aparece la opcion de editar Items.*
-
+![alt text](imagenes/7.png)
 
 ## urls.py Actualización
 *En estas nuevas actualizaciones agregamos nuevas rutas para lograr que la pagina*         *funcionara añadiendo rutas a nuevos apartados como el registro o el permitir que el usuario* *regrese a la página principal tras haber entrado a una nueva pantalla o vista permitiendo que la página funcione como cualquier otra permitiendo al usuario navegar en esta sin problemas entre* *todos sus apartados.*
@@ -1302,6 +1332,10 @@ urlpatterns = [
 ## Actualizaciones de store/templates
 ### item.html
 *Su función consiste en mostrarle al usuario la página de detalles de algún producto en nuestra página principal la cuál es una tienda en línea.*
+![alt text](imagenes/9.png)
+
+
+
 **Codigo**
 ```html
 {% extends 'store/base.html' %}
@@ -1338,6 +1372,10 @@ urlpatterns = [
 
 ### login.html
 *Este apartado no es más que un apartado donde se muestra una pantalla para el inicio de sesión donde el usuario introduce sus datos solicitados*
+![alt text](imagenes/10.png)
+
+
+
 **Codigo**
 ```html
 {% extends 'store/base.html' %}
@@ -1395,6 +1433,10 @@ urlpatterns = [
 
 ### navigation.html
 *Este código muestra un menú superior que contiene distintas opciones, sus botones varían dependiendo de si el usuario activo está autenticado o no.*
+![alt text](imagenes/7.png)
+![alt text](imagenes/8.png)
+
+
 **Codigo**
 ```html
 <nav class="navbar navbar-expand-lg bg-dark" data-bs-theme="dark">
@@ -1444,6 +1486,9 @@ urlpatterns = [
 ```
 ### signup.html
 *Este muestra una página de registro de usuarios, este código está creado para mostrar un formulario donde el usuario se registra.*
+![alt text](imagenes/11.png)
+
+
 **Codigo**
 ```html
 {% extends 'store/base.html' %}
@@ -1503,6 +1548,10 @@ urlpatterns = [
 ```
 ### form.html
 *Es una plantilla que sirve para renderizar formularios en django, este tiene un soporte para la subida de archivos, manejo de errores y un título dinámico.*
+![alt text](imagenes/12.png)
+
+
+
 **Codigo**
 ```html
 {% extends 'store/base.html' %}
@@ -1541,6 +1590,34 @@ urlpatterns = [
 
 
 ## Ejecución del proyecto
+### 1
+![alt text](imagenes/13.png)
+
+### 2
+![alt text](imagenes/14.png)
+
+### 3
+![alt text](imagenes/15.png)
+
+### 4
+![alt text](imagenes/16.png)
+
+### 5
+![alt text](imagenes/17.png)
+
+### 6
+![alt text](imagenes/18.png)
+
+### 7
+![alt text](imagenes/19.png)
+
+### 8
+![alt text](imagenes/20.png)
+
+### 9
+![alt text](imagenes/21.png)
+
+
 
 
 ## Conclusion
