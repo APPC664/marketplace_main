@@ -334,7 +334,7 @@ urlpatterns = [
 
 
 
-## 1
+### 1
 
 
 ## 2. Introducción
@@ -385,7 +385,7 @@ facilita mucho a la hora de empezar a utilizarla o incluso con un poco de experi
 
 
 
-## 2
+### 2
 
 
 ## 3. Comandos Utilizados
@@ -425,7 +425,7 @@ Se compone de tres partes:
 1-python Este llama el interprete de Python instalado en el sistema
 
 
-## 3
+### 3
 
 
 2. -m venv Este crea el entorno virtual ya que usa el módulo venv el cual está incluido
@@ -470,7 +470,7 @@ entorno, en nuestro caso nos mostrará los paquetes instalados en el entorno vir
 Se utiliza de la siguiente manera:
 **(venv) C:\Users\Usuario\NombreDeLaCarpeta> pip list**
 
-## 4
+### 4
 
 
 ### django-admin startproject marketplace_main
@@ -515,7 +515,7 @@ un correo, una contraseña aunque esta no se visualice en el cmd.
 
 
 
-## 5
+### 5
 
 
 
@@ -546,7 +546,7 @@ Se utiliza de la siguiente forma
 
 *
 
-## 6
+### 6
 
 ## 4. Diagrama
 ![alt text](media/item_images/konsola-xbox-series-X.webp)
@@ -613,9 +613,9 @@ STATIC_URL  =  ' /static/ '
 MEDIA_URL  =  ' /media/ '
 
 
-## 9
+### 9
 
-## URLS.PY 
+### URLS.PY 
 *La funcion urls.py tiene varios usos entre los cuales se destacan el mapear las URLs a vistas, lo cual permite al servidor dirigir con precisión a la vista o página que debe ejecutar dependiendo de la URLs mencionada, así mismo permite incluir URLs de otras aplicaciones las cuales se almacenan dentro del archivo principal y también es capaz de llevar a cabo la redirección de usuarios a otras vistas pero esto solo lo puede lograr si las vistas basadas en clases y no en funciones, así mismo esta función pueda dar nombre a cada URLs.
 A continuación se mostraran ejemplos de las funciones mencionadas:*
 
@@ -637,9 +637,9 @@ path( ‘about/’ , TemplateView.as_view( template_name= 'about.html' ) , name=
 
 
 
-## 10 
+### 10 
 
-## MODELS.PY
+### MODELS.PY
 *El archivo models.py es uno de los archivos principales de la base de datos en Django.
 Esta se encarga de definir cómo se almacenan, relacionan y manipulan los datos, conectando tu aplicación con el sistema de persistencia de una forma limpia, segura y en puro Python.
 A continuación profundizaré más en las funciones principales de este archivo.
@@ -672,9 +672,9 @@ def  __str__ ( self ) :
 
 return  self.title
 
-## 11
+### 11
 
-## VIEWS.PY
+### VIEWS.PY
 *El archivo views.py se encarga de que la página o app se ejecute o funcione con normalidad cuando el usuario realiza una acción dentro del sitio web,app o solicita una vista nueva permitiendo que se pueda llevar a cabo el funcionamiento de esta, otra forma de verlas seria como los puentes entre los modelos y las plantillas, en este proceso también esencial el archivo urls.py ya que se encarga de mapear las urls a las vistas permitiendo que estas puedan se presenten con normalidad y precisión la página que se solicita.
 Otras funciones con las que cuenta son las siguientes:
 Recibir solicitudes: Cada vista recibe un objeto HttpRequest que contiene información sobre
@@ -699,9 +699,9 @@ return HttpResponse ( "¡Hola! Bienvenido a mi sitio web." )
 def inicio ( request ) :
 return render ( request, 'inicio.html ' )
 
-## 12
+### 12
 
-## FOLDER TEMPLATES/STORE
+### FOLDER TEMPLATES/STORE
 *En un proyecto Django, el folder templates/store se encarga de la organización de las plantillas HTML de una aplicación llamada store,no obstante, store no es un nombre obligatorio ya que este solo es el nombre que elegimos para nuestra aplicación por que le podemos colocar cualquier otro nombre dependiendo de la aplicación que deseemos crear, así mismo esta carpeta se encarga de renderizar las vistas y mantener un orden en la aplicación creada.
 
 
@@ -714,10 +714,11 @@ su importancia radica en la función de que crea un nuevo producto y asigna crea
 Permitir esto sin login sería inseguro.
  El decorador evita que personas anónimas creen artículos o manipulen la base de datos.*
 
- ## 13
+ ### 13
 
  ## 6. Agrega el código por cada explicacion de los archivos antes mencionados.
  ### settigs.py 
+ ```Python
  """
 Django settings for marketplace_main project.
 
@@ -751,7 +752,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-jkt$q-_q&#^(xvz**z*ummfb_d*w7_fb!t&wuo@4=zbirr1=r_'
 
 
-#SECURITY WARNING: don't run with debug turned on in production!
+# SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
 
@@ -874,18 +875,19 @@ MEDIA_ROOT = BASE_DIR / 'media'
 
 
 #Default primary key field type
-#ttps://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
+#https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+```
 
 
 
+### 18
 
-## 18
 
-
-## URLS en marketplace_main
+### URLS en marketplace_main
+```Python
 """
 URL configuration for marketplace_main project.
 
@@ -916,12 +918,13 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('store/', include('store.urls')),
 ] + static(settings.MEDIA_URL ,document_root= settings.MEDIA_ROOT)
+```
+
+### 19
 
 
-## 19
-
-
-## URLS EN store
+### URLS EN store
+```Python
 from django.urls import path
 
 
@@ -932,11 +935,12 @@ urlpatterns = [
     path('contact/',contact, name='contact'),
     path('detail/<int:pk>/', detail, name='detail'),
 ]
+```
 
 
 
-
-## MODELS.PY
+### MODELS.PY
+```Python
 from django.contrib.auth.models import User
 from django.db import models
 
@@ -967,10 +971,11 @@ class Item(models.Model):
 
     def __str__(self):
         return self.name
+```
 
 
-
-## views.py
+### views.py
+```Python
 from django.shortcuts import render
 from .models import Item, Category
 from django.shortcuts import get_object_or_404
@@ -1023,5 +1028,5 @@ def detail(request, pk):
 
 
     return render(request, 'store/item.html', context)
-
+```
 ## Agrega la ejecucion de lo que va del proyecto
